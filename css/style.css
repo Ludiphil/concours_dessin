@@ -1,0 +1,93 @@
+.bungee-inline-regular {
+  font-family: "Bungee Inline", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.coiny-regular {
+  font-family: "Coiny", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.stroke-text {
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
+
+.hover-effect {
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.hover-effect:hover {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:500');
+/* palette */
+:root {
+  --green: #a2ccb6;
+  --light-peach: #ffecd9;
+  --peach: #ee786e;
+  --sand: #fceeb5;
+  --white: #fff;
+}
+
+.hover-effect {
+  -webkit-appearance: none;
+  background: linear-gradient(to right, var(--green) 0%, var(--sand) 50%, var(--peach) 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  color: var(--white);
+  cursor: pointer;
+  letter-spacing: .05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-top: 10px;
+}
+
+.hover-effect:hover {
+  color: var(--white);
+  cursor: pointer;
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+@keyframes move {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+.move-image {
+  animation: move 5s infinite;
+}
+
+@keyframes move2 {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.move-image2 {
+  animation: move2 4s infinite; /* Durée d'animation différente pour la désynchronisation */
+}

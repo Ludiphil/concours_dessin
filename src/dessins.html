@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualiser les dessins</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gradient-to-b from-pink-500 to-blue-500 coiny-regular">
+    <div class="container mx-auto px-4">
+        <nav class="mt-6 rounded-2xl relative flex items-center justify-between px-2 py-3 mb-3 shadow-lg bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800 ">
+            <div class="text-xl font-bold text-pink-400">
+                Concours de dessins
+            </div>
+            <div class="space-x-4">
+                <a href="#" class="text-black hover:text-gray-200">Concours</a>
+                <a href="#" class="text-black hover:text-gray-200">Dessins</a>
+                <a href="#" class="text-black hover:text-gray-200">Inscription</a>
+                <a href="connexion.html" class="text-white hover:text-gray-200 border border-blue-400 bg-blue-500 rounded-lg p-2">Connexion</a>
+            </div>
+        </nav>
+        <div class="pt-20">
+            <div class="mb-4">
+                <label for="filter" class="block text-sm font-medium text-gray-700">Filtrer par :</label>
+                <select id="filter" name="filter" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option>Tous</option>
+                    <option>Par concours</option>
+                    <option>Par thème</option>
+                    <option>Par date</option>
+                </select>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+                <!-- Ici, vous pouvez ajouter du code pour afficher les dessins stockés en base de données -->
+                <div class="card">
+                    <img src="path_to_image" alt="Dessin 1" class="w-full h-64 object-cover"/>
+                    <div class="p-4">
+                        <h2 class="font-bold text-xl">Nom du dessin 1</h2>
+                        <p class="text-gray-700">Description du dessin 1</p>
+                    </div>
+                </div>
+                <!-- Répétez le code ci-dessus pour chaque dessin dans la base de données -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

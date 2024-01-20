@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma Page</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/leader-line@^1.0.0"></script>
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body class="bg-gradient-to-b from-pink-500 to-blue-500 coiny-regular">
+  <div class="container mx-auto px-4">
+    <nav class="mt-6 rounded-2xl relative flex items-center justify-between px-2 py-3 mb-3 shadow-lg bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800 ">
+      <div class="text-xl font-bold text-pink-400">
+        Concours de dessins
+      </div>
+      <div class="space-x-4">
+        <a href="#" class="text-black hover:text-gray-200">Concours</a>
+        <a href="#" class="text-black hover:text-gray-200">Dessins</a>
+        <a href="#" class="text-black hover:text-gray-200">Inscription</a>
+        <a href="connexion.html" class="text-white hover:text-gray-200 border border-blue-400 bg-blue-500 rounded-lg p-2">Connexion</a>
+      </div>
+    </nav>
+    <div class="pt-20 grid grid-cols-3 gap-4">
+      <!-- Image d'accueil -->
+    <div class="col-span-3 flex justify-center items-center relative">
+      <img src="../image/logo.png" alt="Logo" class="w-1/2 h-auto blur">
+      <div class="absolute flex justify-center items-center">
+        <h1 class="text-8xl text-white text-center stroke-text">Concours<br>de<br>dessins</h1>
+      </div>
+    </div>
+    <!-- New image -->
+    <div class="flex justify-start items-center mt-24">
+      <img src="../image/concour_2.png" alt="Concours 2" class="w-full h-auto move-image" id="image_concours"> 
+    </div>
+    <div class="col-span-2 flex justify-center items-center">
+      <a href="concours.html" class="text-8xl text-white stroke-text text-center hover-effect" id="text_concours">Visualiser les concours</a>
+    </div>
+    <script>
+      var lineConcours = new LeaderLine(
+        LeaderLine.pointAnchor(document.getElementById('text_concours'), {x: '50%', y: '100%'}),
+        LeaderLine.pointAnchor(document.getElementById('image_concours'), {x: '100%', y: '50%'}),
+        {
+          startSocket: 'bottom', 
+          endSocket: 'right',
+          size: 8, // Augmentez la taille de la ligne
+          endPlug: 'arrow1', // Ajoutez une flèche à la fin de la ligne
+          endPlugSize: 2, // Augmentez la taille de la flèche
+          color: '#F58196' // Changez la couleur de la ligne en rose
+        }
+      );
+      lineConcours.hide(); // Cachez la ligne au début
+    
+      var textElementConcours = document.getElementById('text_concours');
+    
+      textElementConcours.addEventListener('mouseover', function() {
+        lineConcours.show('draw'); // Montrez la ligne lorsque la souris passe sur le texte
+      });
+    
+      textElementConcours.addEventListener('mouseout', function() {
+        lineConcours.hide('draw'); // Cachez la ligne lorsque la souris n'est plus sur le texte
+      });
+    </script>
+    
+    <!-- Nouvelle image -->
+    <div class="col-span-2 flex justify-center items-center">
+      <a href="dessins.html"class="text-8xl text-white stroke-text text-center hover-effect" id="text_dessin">Visualiser les dessins</a>
+    </div>
+    <div class="flex justify-start items-center mt-24" >
+      <img src="../image/dessin.png" alt="Dessin" class="w-full h-auto move-image2" id="image_dessin">
+    </div>
+    <script>
+      var line = new LeaderLine(
+        LeaderLine.pointAnchor(document.getElementById('text_dessin'), {x: '50%', y: '100%'}),
+        LeaderLine.pointAnchor(document.getElementById('image_dessin'), {x: '0%', y: '50%'}),
+        {
+        startSocket: 'bottom', 
+        endSocket: 'left',
+        size: 8, // Augmentez la taille de la ligne
+        endPlug: 'arrow1', // Ajoutez une flèche à la fin de la ligne
+        endPlugSize: 2, // Augmentez la taille de la flèche
+        color: '#F58196'
+        }
+      );
+      line.hide(); // Cachez la ligne au début
+    
+      var textElement = document.getElementById('text_dessin');
+    
+      textElement.addEventListener('mouseover', function() {
+        line.show('draw'); // Montrez la ligne lorsque la souris passe sur le texte
+      });
+    
+      textElement.addEventListener('mouseout', function() {
+        line.hide('draw'); // Cachez la ligne lorsque la souris n'est plus sur le texte
+      });
+    </script>
+    <!-- Image de séparation dans la colonne du milieu -->
+    <div class="col-span-3 flex justify-center items-center mt-24">
+      <img src="../image/crayons.png" alt="Crayon Rose" class="w-full h-auto ">
+    </div>
+    <!-- Image boule.png dans la première colonne -->
+    <div class="flex justify-start items-center">
+      <img src="../image/boule.png" alt="Boule" class="w-1/2 h-auto move-image">
+    </div>
+    <!-- Div vide pour la deuxième colonne -->
+    <div>
+      <!-- Div vide pour la première colonne -->
+      <div></div>
+      <!-- Texte 'Nous contacter' dans la deuxième colonne -->
+      <div class="flex justify-center items-center mt-24">
+        <h2 class="text-4xl text-pink-400">Nous contacter</h2>
+      </div>
+      <!-- Div vide pour la troisième colonne -->
+      <div></div>
+
+      <!-- Div vide pour la première colonne -->
+      <div></div>
+      <!-- Image mail.png dans la deuxième colonne -->
+      <div class="flex justify-center items-center m-6">
+        <img src="../image/mail.png" alt="Mail" class="w-1/3 h-auto">
+      </div>
+      <!-- Div vide pour la troisième colonne -->
+      <div></div>
+
+      <!-- Div vide pour la première colonne -->
+      <div></div>
+      <!-- Texte 'Adresse mail' dans la deuxième colonne -->
+      <div class="flex justify-center items-center mt-6">
+        <h2 class="text-4xl text-pink-400">Adresse mail</h2>
+      </div>
+      <!-- Div vide pour la troisième colonne -->
+      <div></div>
+
+      <!-- Div vide pour la première colonne -->
+      <div></div>
+      <!-- Texte 'concours.dessins@gmail.com' dans la deuxième colonne -->
+      <div class="flex justify-center items-center mt-6 mb-6">
+        <p class="text-3xl text-pink-400">concours.dessins@gmail.com</p>
+      </div>
+      <!-- Div vide pour la troisième colonne -->
+      <div></div>
+    </div>
+    <!-- Div vide pour la troisième colonne -->
+    <div class="flex justify-end items-center">
+      <img src="../image/nuage_et_triangle.png" alt="Boule" class="w-2/3 h-auto move-image2">
+    </div>
+  </div>
+    
+  </div>
+
+
+</body>
+</html>

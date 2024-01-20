@@ -16,29 +16,31 @@
 
 </head>
 <body class="bg-gradient-to-b from-pink-500 to-blue-500 coiny-regular">
+  <!-- navbar.html -->
+  
+  
   <div class="container mx-auto px-4">
-    <nav class="mt-6 rounded-2xl relative flex items-center justify-between px-2 py-3 mb-3 shadow-lg bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800 ">
-      <div class="text-xl font-bold text-pink-400">
-        Concours de dessins
-      </div>
-      <div class="space-x-4">
-        <a href="#" class="text-black hover:text-gray-200">Concours</a>
-        <a href="#" class="text-black hover:text-gray-200">Dessins</a>
-        <a href="#" class="text-black hover:text-gray-200">Inscription</a>
-        <a href="connexion.html" class="text-white hover:text-gray-200 border border-blue-400 bg-blue-500 rounded-lg p-2">Connexion</a>
-      </div>
-    </nav>
+    <div id="navbar"></div>
+    <script>
+      window.onload = function() {
+        fetch('navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+          });
+      };
+    </script>
     <div class="pt-20 grid grid-cols-3 gap-4">
       <!-- Image d'accueil -->
     <div class="col-span-3 flex justify-center items-center relative">
       <img src="../image/logo.png" alt="Logo" class="w-1/2 h-auto blur">
       <div class="absolute flex justify-center items-center">
-        <h1 class="text-8xl text-white text-center stroke-text">Concours<br>de<br>dessins</h1>
+        <h1 class="text-8xl text-blue-100 text-center stroke-text">Concours<br>de<br>dessins</h1>
       </div>
     </div>
     <!-- New image -->
     <div class="flex justify-start items-center mt-24">
-      <img src="../image/concour_2.png" alt="Concours 2" class="w-full h-auto move-image" id="image_concours"> 
+      <img src="../image/concour_2.png" alt="Concours" class="w-full h-auto move-image" id="image_concours"> 
     </div>
     <div class="col-span-2 flex justify-center items-center">
       <a href="concours.html" class="text-8xl text-white stroke-text text-center hover-effect" id="text_concours">Visualiser les concours</a>
@@ -71,7 +73,7 @@
     
     <!-- Nouvelle image -->
     <div class="col-span-2 flex justify-center items-center">
-      <a href="dessins.html"class="text-8xl text-white stroke-text text-center hover-effect" id="text_dessin">Visualiser les dessins</a>
+      <a href="dessins.html"class="text-8xl text-white text-center hover-effect stroke-text" id="text_dessin">Visualiser les dessins</a>
     </div>
     <div class="flex justify-start items-center mt-24" >
       <img src="../image/dessin.png" alt="Dessin" class="w-full h-auto move-image2" id="image_dessin">
@@ -115,7 +117,7 @@
       <div></div>
       <!-- Texte 'Nous contacter' dans la deuxième colonne -->
       <div class="flex justify-center items-center mt-24">
-        <h2 class="text-4xl text-pink-400">Nous contacter</h2>
+        <h2 class="text-4xl text-pink-400 stroke-text">Nous contacter</h2>
       </div>
       <!-- Div vide pour la troisième colonne -->
       <div></div>
@@ -133,7 +135,7 @@
       <div></div>
       <!-- Texte 'Adresse mail' dans la deuxième colonne -->
       <div class="flex justify-center items-center mt-6">
-        <h2 class="text-4xl text-pink-400">Adresse mail</h2>
+        <h2 class="text-4xl text-pink-400 stroke-text">Adresse mail</h2>
       </div>
       <!-- Div vide pour la troisième colonne -->
       <div></div>
@@ -142,7 +144,7 @@
       <div></div>
       <!-- Texte 'concours.dessins@gmail.com' dans la deuxième colonne -->
       <div class="flex justify-center items-center mt-6 mb-6">
-        <p class="text-3xl text-pink-400">concours.dessins@gmail.com</p>
+        <p class="text-3xl text-pink-400 stroke-text">concours.dessins@gmail.com</p>
       </div>
       <!-- Div vide pour la troisième colonne -->
       <div></div>

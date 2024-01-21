@@ -22,7 +22,20 @@
                 });
             };
         </script>
+        
         <div class="pt-20">
+            <div class="grid grid-cols-3 gap-4 items-center">
+                <div class="flex justify-center">
+                    <img src="../image/nuage_et_triangle.png" alt="Dessins" class="move-image"/>
+                </div>
+                <div class="flex justify-center">
+                    <h1 class="text-8xl text-white text-center stroke-text">Dessins</h1>
+                </div>
+                <div class="flex justify-center">
+                    <img src="../image/dessin.png" alt="Dessins" class="w-1/2 move-image2"/>
+                </div>
+            </div>
+
             <div class="mb-4">
                 <label for="filter" class="block text-sm font-medium text-gray-700">Filtrer par :</label>
                 <select id="filter" name="filter" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
@@ -34,12 +47,30 @@
             </div>
             <div class="grid grid-cols-3 gap-4">
                 <!-- Ici, vous pouvez ajouter du code pour afficher les dessins stockés en base de données -->
-                <div class="card">
+                <div class="card bg-white shadow-lg rounded-lg overflow-hidden p-4">
                     <img src="path_to_image" alt="Dessin 1" class="w-full h-64 object-cover"/>
-                    <div class="p-4">
-                        <h2 class="font-bold text-xl">Nom du dessin 1</h2>
-                        <p class="text-gray-700">Description du dessin 1</p>
-                    </div>
+                    <table class="p-4 w-full">
+                        <tr>
+                            <td>Dessin numéro :</td>
+                            <td id="drawing-number">1</td>
+                        </tr>
+                        <tr>
+                            <td>Note attribuée :</td>
+                            <td id="drawing-rating">4.5</td>
+                        </tr>
+                        <tr>
+                            <td>Nom du compétiteur :</td>
+                            <td id="competitor-name">John Doe</td>
+                        </tr>
+                        <tr>
+                            <td>Description du concours :</td>
+                            <td id="contest-description">Description ici</td>
+                        </tr>
+                        <tr>
+                            <td>Thème du concours :</td>
+                            <td id="contest-theme">Thème ici</td>
+                        </tr>
+                    </table>
                 </div>
                 <!-- Répétez le code ci-dessus pour chaque dessin dans la base de données -->
             </div>

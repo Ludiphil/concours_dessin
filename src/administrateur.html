@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'administration</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gradient-to-b from-pink-500 to-blue-500 bg-no-repeat min-h-screen bg-cover coiny-regular">
+    <div class="container mx-auto px-4">
+        <div id="navbar"></div>
+        <script>
+            window.onload = function() {
+                fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
+            };
+        </script>
+        <div class="container mx-auto px-4 grid grid-cols-3 gap-4">
+            <!-- Section de création de concours -->
+            <div class="bg-white p-10 rounded-lg shadow-lg m-4">
+                <h1 class="text-5xl text-white text-center stroke-text">Création de concours</h1>
+                <form class="mt-4">
+                    <input type="text" placeholder="Nom du concours" class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <input type="text" placeholder="Thème du concours" class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <input type="date" placeholder="Date de début" class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <input type="date" placeholder="Date de fin" class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full">Créer</button>
+                </form>
+            </div>
+            <!-- Section d'ajout de compétiteur -->
+            <div class="bg-white p-10 rounded-lg shadow-lg m-4">
+                <h1 class="text-5xl text-white text-center stroke-text">Ajout d'un compétiteur</h1>
+                <form class="mt-4">
+                    <input type="text" placeholder="Nom du compétiteur" class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full">Ajouter</button>
+                </form>
+            </div>
+            <!-- Section d'ajout d'évaluateur -->
+            <div class="bg-white p-10 rounded-lg shadow-lg m-4">
+                <h1 class="text-5xl text-white text-center stroke-text">Ajout d'un évaluateur</h1>
+                <form class="mt-4">
+                    <input type="text" placeholder="Nom de l'évaluateur" class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full">Ajouter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

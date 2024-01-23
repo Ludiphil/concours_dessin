@@ -24,77 +24,36 @@
                 });
             };
         </script>
+        <h1 class="text-8xl text-white text-center stroke-text">Notation des dessins</h1>
         <div class="grid grid-cols-3 gap-4">
             <!-- Colonne 1 -->
+            
+            
+            <!-- section image à dupliquer -->
+            
             <div class="card bg-white shadow-lg rounded-lg overflow-hidden p-4">
                 <!-- Ici, vous pouvez ajouter du code pour afficher le dessin 1 -->
                 <img src="../image/dessin_test.png" alt="Image description">
-                    <div class="mt-4">
-                        <label for="rating">Note:</label>
-                        <div class="rating">
-                            <input type="hidden" id="rating" name="rating" min="1" max="10">
-                            <span class="star" data-value="1"></span>
-                            <span class="star" data-value="2"></span>
-                            <span class="star" data-value="3"></span>
-                            <span class="star" data-value="4"></span>
-                            <span class="star" data-value="5"></span>
-                            <span class="star" data-value="6"></span>
-                            <span class="star" data-value="7"></span>
-                            <span class="star" data-value="8"></span>
-                            <span class="star" data-value="9"></span>
-                            <span class="star" data-value="10"></span>
-                        </div>
-                    </div>
-
-                    <style>
-                        .rating {
-                            display: inline-block;
-                            font-size: 0;
-                            position: relative;
-                            cursor: pointer;
-                        }
-
-                        .star {
-                            display: inline-block;
-                            width: 20px;
-                            height: 20px;
-                            background-image: url('filled-star.png'); /* Replace with your filled star image */
-                            background-size: cover;
-                        }
-
-                        .star:hover,
-                        .star:hover ~ .star {
-                            background-image: url('filled-star.png'); /* Replace with your filled star image */
-                        }
-
-                        #rating {
-                            position: absolute;
-                            left: -9999px;
-                        }
-                    </style>
-
-                    <script>
-                        const ratingInput = document.getElementById('rating');
-                        const stars = document.querySelectorAll('.star');
-
-                        stars.forEach(star => {
-                            star.addEventListener('mouseover', () => {
-                                const value = star.getAttribute('data-value');
-                                ratingInput.value = value;
-                            });
-
-                            star.addEventListener('mouseout', () => {
-                                ratingInput.value = '';
-                            });
-
-                            star.addEventListener('click', () => {
-                                const value = star.getAttribute('data-value');
-                                ratingInput.value = value;
-                            });
-                        });
-                    </script>
-                </div>²
+                <form class="text-center">
+                    <select name="rating" id="rating">
+                        <option value="">Sélectionnez une note</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <button type="submit" class="text-white hover:text-gray-200 border border-blue-400 bg-blue-500 rounded-lg p-2 mx-auto block mt-2">Valider la note</button>
+                </form>
             </div>
+
+            <!-- fin section image à dupliquer -->
+
             
         </div>
     
@@ -102,11 +61,3 @@
 </body>
 </html>
                 
-            </div>
-
-            
-        </div>
-    
-    </div>
-</body>
-</html>

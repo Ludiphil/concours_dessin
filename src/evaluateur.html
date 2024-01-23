@@ -17,24 +17,34 @@
         
         <script>
             window.onload = function() {
-                fetch('navbar.html')
+                fetch('navbar.php')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('navbar').innerHTML = data;
                 });
+        
+                document.getElementById('rating-form').addEventListener('submit', function(event) {
+                var rating = document.getElementById('rating').value;
+                if (!rating) {
+                    event.preventDefault();
+                    alert('Veuillez sélectionner une note avant de valider.');
+                } else {
+                    var confirmation = confirm('Voulez-vous valider cette note ?');
+                    if (!confirmation) {
+                        event.preventDefault();
+                    }
+                }
+            });
             };
         </script>
         <h1 class="text-8xl text-white text-center stroke-text">Notation des dessins</h1>
         <div class="grid grid-cols-3 gap-4">
             <!-- Colonne 1 -->
-            
-            
             <!-- section image à dupliquer -->
-            
             <div class="card bg-white shadow-lg rounded-lg overflow-hidden p-4">
                 <!-- Ici, vous pouvez ajouter du code pour afficher le dessin 1 -->
                 <img src="../image/dessin_test.png" alt="Image description">
-                <form class="text-center">
+                <form id="rating-form" class="text-center">
                     <select name="rating" id="rating">
                         <option value="">Sélectionnez une note</option>
                         <option value="1">1</option>
@@ -51,10 +61,7 @@
                     <button type="submit" class="text-white hover:text-gray-200 border border-blue-400 bg-blue-500 rounded-lg p-2 mx-auto block mt-2">Valider la note</button>
                 </form>
             </div>
-
             <!-- fin section image à dupliquer -->
-
-            
         </div>
     
     </div>

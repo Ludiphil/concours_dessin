@@ -9,11 +9,6 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     exit();
 }
 
-echo "User is an admin.<br>";
-
-// if the user is logged in and is an admin, display the admin page
-include 'administrateur.html';
-
 include 'db_connect.php';
 
 echo "Included db_connect.php.<br>";
@@ -39,5 +34,12 @@ if ($result->num_rows > 0) {
 }
 echo "</div>";
 $conn->close();
+
+echo "User is an admin.<br>";
+
+// if the user is logged in and is an admin, display the admin page
+include 'administrateur.html';
+
+
 
 ?>

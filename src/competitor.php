@@ -5,7 +5,7 @@ session_start();
 // check if the user is a competitor
 if ($_SESSION['role'] != 'competitor') {
     // if not, redirect to the login page
-    header('Location: connexion.html');
+    header('Location: index.html');
     exit();
 }
 

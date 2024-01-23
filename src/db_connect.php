@@ -3,9 +3,9 @@ $servername = "localhost";
 $username = "etudiant";
 $password = "N3twork!";
 $dbname = "siteweb";
-
+$dbport = 3306;
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, $dbport);
 
 // Check connection
 if ($conn->connect_error) {

@@ -5,7 +5,7 @@ session_start();
 // check if the user is an evaluator
 if ($_SESSION['role'] != 'evaluator') {
     // if not, redirect to the login page
-    header('Location: connexion.html');
+    header('Location: index.html');
     exit();
 }
 

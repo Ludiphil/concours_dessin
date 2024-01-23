@@ -28,6 +28,10 @@ var_dump($_SESSION);
           <a href="#" class="text-black hover:text-gray-200">Inscription</a>
           <a href="connexion.html" class="text-white hover:text-gray-200 border border-blue-400 bg-blue-500 rounded-lg p-2">Connexion</a>
       <?php endif; ?>
+      <?php if (isset($_SESSION['role'])): ?>
+          <!-- show this button only if the user is logged in -->
+          <a href="deconnexion.php" class="text-white hover:text-gray-200 border border-red-400 bg-red-500 rounded-lg p-2">Déconnexion</a>
+      <?php endif; ?>
   </div>
 </nav>
 </html>

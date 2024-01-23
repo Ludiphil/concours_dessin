@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>Evaluateur</title>
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +24,89 @@
                 });
             };
         </script>
+        <div class="grid grid-cols-3 gap-4">
+            <!-- Colonne 1 -->
+            <div class="card bg-white shadow-lg rounded-lg overflow-hidden p-4">
+                <!-- Ici, vous pouvez ajouter du code pour afficher le dessin 1 -->
+                <img src="../image/dessin_test.png" alt="Image description">
+                    <div class="mt-4">
+                        <label for="rating">Note:</label>
+                        <div class="rating">
+                            <input type="hidden" id="rating" name="rating" min="1" max="10">
+                            <span class="star" data-value="1"></span>
+                            <span class="star" data-value="2"></span>
+                            <span class="star" data-value="3"></span>
+                            <span class="star" data-value="4"></span>
+                            <span class="star" data-value="5"></span>
+                            <span class="star" data-value="6"></span>
+                            <span class="star" data-value="7"></span>
+                            <span class="star" data-value="8"></span>
+                            <span class="star" data-value="9"></span>
+                            <span class="star" data-value="10"></span>
+                        </div>
+                    </div>
 
-       <p>C'est super alexis</p>
+                    <style>
+                        .rating {
+                            display: inline-block;
+                            font-size: 0;
+                            position: relative;
+                            cursor: pointer;
+                        }
+
+                        .star {
+                            display: inline-block;
+                            width: 20px;
+                            height: 20px;
+                            background-image: url('filled-star.png'); /* Replace with your filled star image */
+                            background-size: cover;
+                        }
+
+                        .star:hover,
+                        .star:hover ~ .star {
+                            background-image: url('filled-star.png'); /* Replace with your filled star image */
+                        }
+
+                        #rating {
+                            position: absolute;
+                            left: -9999px;
+                        }
+                    </style>
+
+                    <script>
+                        const ratingInput = document.getElementById('rating');
+                        const stars = document.querySelectorAll('.star');
+
+                        stars.forEach(star => {
+                            star.addEventListener('mouseover', () => {
+                                const value = star.getAttribute('data-value');
+                                ratingInput.value = value;
+                            });
+
+                            star.addEventListener('mouseout', () => {
+                                ratingInput.value = '';
+                            });
+
+                            star.addEventListener('click', () => {
+                                const value = star.getAttribute('data-value');
+                                ratingInput.value = value;
+                            });
+                        });
+                    </script>
+                </div>²
+            </div>
+            
+        </div>
+    
+    </div>
+</body>
+</html>
+                
+            </div>
+
+            
+        </div>
+    
     </div>
 </body>
 </html>

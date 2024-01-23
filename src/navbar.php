@@ -23,7 +23,7 @@ var_dump($_SESSION);
   <div class="space-x-4">
       <a href="concours.html" class="text-black hover:text-gray-200">Concours</a>
       <a href="dessins.html" class="text-black hover:text-gray-200">Dessins</a>
-      <?php if (!isset($_SESSION['username'])): ?>
+      <?php if (!isset($_SESSION['role'])): ?>
           <!-- show these buttons only if the user is not logged in -->
           <a href="#" class="text-black hover:text-gray-200">Inscription</a>
           <a href="connexion.html" class="text-white hover:text-gray-200 border border-blue-400 bg-blue-500 rounded-lg p-2">Connexion</a>

@@ -53,17 +53,24 @@ if ($result->num_rows > 0) {
         $_SESSION['user'] = $user;
         echo "Login successful";
         header('Location: index.html');
+        exit();
     } else {
         echo "Invalid password";
+        header('Location: login.php');
+        exit();
     }
 } else {
     echo "Invalid login";
+    header('Location: login.php');
+    exit();
 }
 
 // check the credentials (this is just a placeholder, you should check the credentials against a database)
 if ($username == 'admin' && $password == 'password') {
     $_SESSION['role'] = 'admin';
-} 
+} else(){
+
+}
 // elseif ($username == 'competitor' && $password == 'password') {
 //     $_SESSION['role'] = 'competitor';
 // } elseif ($username == 'evaluator' && $password == 'password') {

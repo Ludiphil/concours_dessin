@@ -14,7 +14,13 @@
 <body class="bg-gradient-to-b from-pink-500 to-blue-500 bg-no-repeat min-h-screen bg-cover coiny-regular">
     <div class="container mx-auto px-4">
         <div id="navbar"></div>
-        
+        <div id="dialog" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white p-4 rounded">
+                <p>Voulez-vous valider cette note ?</p>
+                <button id="confirm" class="bg-blue-500 text-white p-2 rounded">Oui</button>
+                <button id="cancel" class="bg-red-500 text-white p-2 rounded">Non</button>
+            </div>
+        </div>
         <script>
             window.onload = function() {
                 fetch('navbar.php')
@@ -23,18 +29,25 @@
                     document.getElementById('navbar').innerHTML = data;
                 });
         
+                // pop up 
                 document.getElementById('rating-form').addEventListener('submit', function(event) {
                 var rating = document.getElementById('rating').value;
                 if (!rating) {
                     event.preventDefault();
                     alert('Veuillez sélectionner une note avant de valider.');
                 } else {
-                    var confirmation = confirm('Voulez-vous valider cette note ?');
-                    if (!confirmation) {
-                        event.preventDefault();
-                    }
+                    event.preventDefault();
+                    document.getElementById('dialog').classList.remove('hidden');
                 }
-            });
+                });
+
+                document.getElementById('confirm').addEventListener('click', function() {
+                    document.getElementById('rating-form').submit();
+                });
+
+                document.getElementById('cancel').addEventListener('click', function() {
+                    document.getElementById('dialog').classList.add('hidden');
+                });
             };
         </script>
         <h1 class="text-8xl text-white text-center stroke-text">Notation des dessins</h1>

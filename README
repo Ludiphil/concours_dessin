@@ -8,4 +8,27 @@
 
 ==>navabar 
     faire modifier la bar pour afficher le champ profil" quand l'utilisateur est connecté
-    
+
+=> inscription
+
+nom
+prénom
+adresse (rue, code postal, ville)
+login
+mot de passe
+confirm mot de passe
+
+=> profil
+
+enlever 
+- le biographie
+- total concours
+- concours gagnés
+- classement
+
+rajouter (en modification, champ de texte que je remplirai avec requête sql mais modifiable par l'utilisateur) :
+
+nom
+prénom
+adresse (rue, code postal, ville) 
+

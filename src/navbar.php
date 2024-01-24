@@ -1,7 +1,7 @@
 <?php
 // start the session
 session_start();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 // Include the database connection file
 include 'db_connect.php';
@@ -10,7 +10,7 @@ include 'db_connect.php';
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
-    echo "Connected successfully.<br>";
+    //echo "Connected successfully.<br>";
 }
 
 // Perform a query
@@ -21,18 +21,18 @@ if ($result === FALSE) {
     die("SQL Error: " . $conn->error);
 }
 
-echo "Performed SQL query.<br>";
+//echo "Performed SQL query.<br>";
 
-echo "<div style='background-color: yellow;'>";
+//echo "<div style='background-color: yellow;'>";
 if ($result->num_rows > 0) {
   // Output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "<p>ID du dessin : " . $row["numDessin"] . "</p>";
+    //echo "<p>ID du dessin : " . $row["numDessin"] . "</p>";
   }
 } else {
-  echo "0 results";
+  //echo "0 results";
 }
-echo "</div>";
+//echo "</div>";
 $conn->close();
 ?>
 

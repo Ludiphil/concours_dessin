@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gradient-to-b from-pink-500 to-blue-500 bg-no-repeat min-h-screen bg-cover coiny-regular">
+    <div class="container mx-auto px-4">
+        
+        <div id="navbar"></div>
+        <div id="dialog" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white p-4 rounded">
+                <p>Voulez-vous valider ces informations ?</p>
+                <button id="confirm" type="submit" class="bg-blue-500 text-white p-2 rounded" onclick="window.location.href = 'profil.html'">Oui</button>
+                <button id="cancel" class="bg-red-500 text-white p-2 rounded">Non</button>
+            </div>
+        </div>
+        
+        <script>
+            window.onload = function() {
+                fetch('navbar.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
+        
+                // pop up 
+                document.getElementById('submit').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    document.getElementById('dialog').classList.remove('hidden');
+                });
+        
+                document.getElementById('confirm').addEventListener('click', function() {
+                    document.getElementById('modif').submit();
+                });
+        
+                document.getElementById('cancel').addEventListener('click', function() {
+                    document.getElementById('dialog').classList.add('hidden');
+                });
+            };
+        </script>
+
+        <div class="pt-20 flex justify-center items-center">
+            <div class="w-full max-w-xs">
+                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <h2 class="block text-gray-700 text-sm font-bold mb-2">Profil</h2>
+                    <label for="firstname">Prénom</label>
+                    <input id="firstname" name="firstname" type="text" class="border border-gray-300 p-2 mb-2">
+                    <label for="lastname">Nom</label>
+                    <input id="lastname" name="lastname" type="text" class="border border-gray-300 p-2 mb-2">
+                    <label for="address">Rue</label>
+                    <input id="address" name="address" type="text" class="border border-gray-300 p-2 mb-2">
+                    <label for="postal_code">Code postal</label>
+                    <input id="postal_code" name="postal_code" type="text" class="border border-gray-300 p-2 mb-2">
+                    <label for="city">Ville</label>
+                    <input id="city" name="city" type="text" class="border border-gray-300 p-2 mb-2">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" class="border border-gray-300 p-2 mb-2">
+                    <label for="mdp">mot de passe</label>
+                    <input id="mdp" name="mdp" type="mdp" class="border border-gray-300 p-2 mb-2">
+                    <button id="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Mettre à jour</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -57,7 +57,7 @@ $conn->close();
       <a href="dessins.html" class="text-black hover:text-gray-200">Dessins</a>
       <?php if (!isset($_SESSION['role'])): ?>
           <!-- show these buttons only if the user is not logged in -->
-          <a href="#" class="text-black hover:text-gray-200">Inscription</a>
+          <a href="inscription.html" class="text-black hover:text-gray-200">Inscription</a>
           <a href="connexion.html" class="text-white hover:text-gray-200 border border-blue-400 bg-blue-500 rounded-lg p-2">Connexion</a>
       <?php endif; ?>
       <?php if (isset($_SESSION['role'])): ?>

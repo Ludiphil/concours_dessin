@@ -23,7 +23,7 @@ if ($result === FALSE) {
 
 //echo "Performed SQL query.<br>";
 
-//echo "<div style='background-color: yellow;'>";
+echo "<div style='background-color: yellow;'>";
 if ($result->num_rows > 0) {
   // Output data of each row
   while($row = $result->fetch_assoc()) {
@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
 } else {
   //echo "0 results";
 }
-//echo "</div>";
+echo "</div>";
 $conn->close();
 ?>
 

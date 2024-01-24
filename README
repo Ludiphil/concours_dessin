@@ -32,3 +32,7 @@ nom
 prénom
 adresse (rue, code postal, ville) 
 
+=> administrateur.html
+
+rajouter un bouton de confirmation de création de concours avec popup de confirmation comme tu as fait pour les notes des dessins
+

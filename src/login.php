@@ -48,10 +48,11 @@ if ($result->num_rows > 0) {
 
     // Verify the password
     if (password_verify($password, $user['motDePasse'])) {
-        // Password is correct, start the session and save user data into session
+        // Password is correct, start the sess  ion and save user data into session
         session_start();
         $_SESSION['user'] = $user;
         echo "Login successful";
+        header('Location: index.html');
     } else {
         echo "Invalid password";
     }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gradient-to-b from-pink-500 to-blue-500 bg-no-repeat coiny-regular min-h-screen">
+    <!-- navbar.html -->
+    <div class="container mx-auto px-4">
+        <div id="navbar"></div>
+        <script>
+            window.onload = function() {
+                fetch('navbar.php')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('navbar').innerHTML = data;
+                    });
+            };
+        </script>
+        <!-- Ajout d'un rectangle blanc avec des bords arrondis -->
+        <div class="flex">
+
+            <!-- dupliquer la div pour affin n image -->
+       
+            <!-- Galerie de dessins -->
+            <div class="bg-white rounded-lg p-2 mt-2 ml-2 w-1/3 flex flex-col items-center">
+                 <img src="../image/dessin_test.png" alt="Dessin 1" class="w-full object-cover"/>
+            </div>
+
+
+        </div>
+        
+    </div>
+</body>
+</html>

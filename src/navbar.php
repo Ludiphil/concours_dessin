@@ -1,7 +1,7 @@
 <?php
 // start the session
 session_start();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 // Include the database connection file
 include 'db_connect.php';
@@ -10,7 +10,7 @@ include 'db_connect.php';
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
-    echo "Connected successfully.<br>";
+    //echo "Connected successfully.<br>";
 }
 
 // Perform a query
@@ -21,18 +21,18 @@ if ($result === FALSE) {
     die("SQL Error: " . $conn->error);
 }
 
-echo "Performed SQL query.<br>";
+//echo "Performed SQL query.<br>";
 
-echo "<div style='background-color: yellow;'>";
+//echo "<div style='background-color: yellow;'>";
 if ($result->num_rows > 0) {
   // Output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "<p>ID du dessin : " . $row["numDessin"] . "</p>";
+    //echo "<p>ID du dessin : " . $row["numDessin"] . "</p>";
   }
 } else {
-  echo "0 results";
+  //echo "0 results";
 }
-echo "</div>";
+//echo "</div>";
 $conn->close();
 ?>
 
@@ -57,7 +57,7 @@ $conn->close();
       <a href="dessins.html" class="text-black hover:text-gray-200">Dessins</a>
       <?php if (!isset($_SESSION['role'])): ?>
           <!-- show these buttons only if the user is not logged in -->
-          <a href="#" class="text-black hover:text-gray-200">Inscription</a>
+          <a href="inscription.html" class="text-black hover:text-gray-200">Inscription</a>
           <a href="connexion.html" class="text-white hover:text-gray-200 border border-blue-400 bg-blue-500 rounded-lg p-2">Connexion</a>
       <?php endif; ?>
       <?php if (isset($_SESSION['role'])): ?>

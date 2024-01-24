@@ -8,4 +8,40 @@
 
 ==>navabar 
     faire modifier la bar pour afficher le champ profil" quand l'utilisateur est connecté
-    
+
+=> inscription
+
+nom
+prénom
+adresse (rue, code postal, ville)
+login
+mot de passe
+confirm mot de passe
+
+=> profil
+
+enlever ==> ok
+- le biographie
+- total concours
+- concours gagnés
+- classement
+
+
+modifier la page de profil en page de consultation des dessins des utilisateurs ==> ok 
+
+faire une page profil permettant de modifier les informatiob de l'utilisateur. ==> ok 
+rajouter :
+    (en modification, champ de texte que je remplirai avec requête sql mais modifiable par l'utilisateur) ==> ok 
+
+
+inscription : ==> ok
+nom
+prénom
+adresse (rue, code postal, ville) 
+
+
+
+=> administrateur.html
+
+rajouter un bouton de confirmation de création de concours avec popup de confirmation comme tu as fait pour les notes des dessins
+

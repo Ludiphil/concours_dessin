@@ -29,19 +29,17 @@ if ($result->num_rows > 0) {
     if (password_verify($password, $user['motDePasse'])) {
         // Password is correct, start the sess  ion and save user data into session
         session_start();
-        $_SESSION['user'] = $user;
+        $_SESSION['role'] = 'user';
         echo "Login successful";
         header('Location: index.html');
         exit();
     } else {
-        echo "Invalid password";
-        header('Location: connexion.html');
-        exit();
+        header('Location: connexion.html?error=1');
+
     }
 } else {
-    echo "Invalid login";
-    header('Location: connexion.html');
-    exit();
+    header('Location: connexion.html?error=1');
+
 }
 
 // check the credentials (this is just a placeholder, you should check the credentials against a database)

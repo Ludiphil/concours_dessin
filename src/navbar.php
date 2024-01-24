@@ -27,7 +27,7 @@ if ($result === FALSE) {
 if ($result->num_rows > 0) {
   // Output data of each row
   while($row = $result->fetch_assoc()) {
-    //echo "<p>ID du dessin : " . $row["numDessin"] . "</p>";
+    echo "<p>ID du dessin : " . $row["numDessin"] . "</p>";
   }
 } else {
   //echo "0 results";

@@ -20,17 +20,26 @@ confirm mot de passe
 
 => profil
 
-enlever 
+enlever ==> ok
 - le biographie
 - total concours
 - concours gagnés
 - classement
 
-rajouter (en modification, champ de texte que je remplirai avec requête sql mais modifiable par l'utilisateur) :
 
+modifier la page de profil en page de consultation des dessins des utilisateurs ==> ok 
+
+faire une page profil permettant de modifier les informatiob de l'utilisateur. ==> ok 
+rajouter :
+    (en modification, champ de texte que je remplirai avec requête sql mais modifiable par l'utilisateur) ==> ok 
+
+
+inscription : ==> ok
 nom
 prénom
 adresse (rue, code postal, ville) 
+
+
 
 => administrateur.html
 

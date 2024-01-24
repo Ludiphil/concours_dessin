@@ -56,12 +56,12 @@ if ($result->num_rows > 0) {
         exit();
     } else {
         echo "Invalid password";
-        header('Location: login.php');
+        header('Location: connexion.html');
         exit();
     }
 } else {
     echo "Invalid login";
-    header('Location: login.php');
+    header('Location: connexion.html');
     exit();
 }
 

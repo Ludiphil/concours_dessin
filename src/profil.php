@@ -63,7 +63,7 @@ if ($result->num_rows > 0) {
                 <p id="email" class="border border-gray-300 p-2 mb-2"><?php echo $user['login']; ?></p>
                 <label for="mdp">Mot de passe</label>
                 <p id="mdp" class="border border-gray-300 p-2 mb-2">******</p>
-                <a href="modification_profil.html" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline block text-center mt-4">Modifier les informations du profil</a>
+                <a href="modification_profil.php" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline block text-center mt-4">Modifier les informations du profil</a>
             </div>
         </div>
         <!-- <div class="pt-20 flex justify-center items-center">

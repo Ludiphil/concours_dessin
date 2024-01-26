@@ -1,7 +1,8 @@
 <?php
 // start the session
-session_start();
 include 'db_connect.php';
+
+session_start();
 
 
 // get the username and password from the form
@@ -30,9 +31,7 @@ if ($result->num_rows > 0) {
     // Verify the password
     if (password_verify($password, $user['motDePasse'])) {
         // Password is correct, start the sess  ion and save user data into session
-        session_start();
         $_SESSION['role'] = 'user';
-        echo "Login successful";
         header('Location: index.html');
         exit();
     } else {
@@ -47,29 +46,14 @@ if ($result->num_rows > 0) {
 
 }
 
-// check the credentials (this is just a placeholder, you should check the credentials against a database)
-if ($username == 'admin' && $password == 'password') {
-    $_SESSION['role'] = 'admin';
-} 
-// elseif ($username == 'competitor' && $password == 'password') {
-//     $_SESSION['role'] = 'competitor';
-// } elseif ($username == 'evaluator' && $password == 'password') {
-//     $_SESSION['role'] = 'evaluator';
-// } else {
-//     // if the credentials are wrong, redirect back to the login page with an error message
-//     header('Location: connexion.html?error=1');
-//     exit();
-// }
+// if ($username == 'Manitou' && $password == 'LemeilleurDG') {
+//     $_SESSION['role'] = 'admin';
+// } 
 
-// if the credentials are correct, redirect to the correct page based on the role
-if ($_SESSION['role'] == 'admin') {
-    header('Location: admin.php');
-} 
-// elseif ($_SESSION['role'] == 'competitor') {
-//     header('Location: competitor.php');
-// } elseif ($_SESSION['role'] == 'evaluator') {
-//     header('Location: evaluator.php');
-// }
+// if ($_SESSION['role'] == 'admin') {
+//     header('Location: admin.php');
+// } 
+
 
 // Close the connection
 $conn->close();

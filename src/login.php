@@ -36,11 +36,14 @@ if ($result->num_rows > 0) {
         exit();
     } else {
         header('Location: connexion.html?error=1');
+        console.log("erreur de mot de passe")
         exit();
+        
 
     }
 } else {
     header('Location: connexion.html?error=1');
+    console.log("erreur de login")
     exit();
 
 

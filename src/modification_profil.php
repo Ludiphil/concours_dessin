@@ -66,7 +66,9 @@ if ($result->num_rows > 0) {
                 });
         
                 document.getElementById('confirm').addEventListener('click', function() {
+                    document.getElementById('dialog').classList.add('hidden');
                     document.getElementById('modif').submit();
+                
                 });
         
                 document.getElementById('cancel').addEventListener('click', function() {

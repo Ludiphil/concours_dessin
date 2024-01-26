@@ -8,8 +8,8 @@ $city = $_POST['city'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
-$first_name = $_POST['first_name']; // Add this line
-$last_name = $_POST['last_name']; // Add this line
+$first_name = $_POST['firstname']; // Add this line
+$last_name = $_POST['lastname']; // Add this line
 
 // Check if the passwords match
 if ($password !== $confirm_password) {

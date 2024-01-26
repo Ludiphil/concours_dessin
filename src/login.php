@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
 
     // Verify the password
-    if (password_verify($password, $user['motDePasse'])) {
+    if ($password == $user['motDePasse']) {
         // Password is correct, start the sess  ion and save user data into session
         $_SESSION['role'] = 'user';
         header('Location: index.html');

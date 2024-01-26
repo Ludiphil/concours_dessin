@@ -34,6 +34,11 @@ if ($result->num_rows > 0) {
     if ($password == $user['motDePasse']) {
         // Password is correct, start the sess  ion and save user data into session
         $_SESSION['role'] = 'user';
+        if($user['login'] == 'Manitou'){
+            $_SESSION['role'] = 'admin';
+            header('Location: admin.php');
+            exit();
+        }
         header('Location: index.html');
         exit();
     } else {

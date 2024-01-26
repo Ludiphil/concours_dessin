@@ -1,3 +1,14 @@
+<div id="navbar"></div>
+    <script>
+      window.onload = function() {
+        fetch('navbar.php')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+          });
+      };
+    </script>
+
 <?php
 // start the session
 include 'db_connect.php';

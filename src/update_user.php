@@ -27,6 +27,15 @@ if ($stmt->affected_rows > 0) {
     echo "Erreur lors de la mise à jour";
 }
 
+// Check if the update was successful
+if ($stmt->affected_rows > 0) {
+    echo "Mise à jour réussie";
+    header("Location: modification_profil.php"); // Redirect to the profile modification page
+    exit();
+} else {
+    echo "Erreur lors de la mise à jour";
+}
+
 // Close the connection
 $conn->close();
 ?>

@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
         <div id="dialog" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
             <div class="bg-white p-4 rounded">
                 <p>Voulez-vous valider ces informations ?</p>
-                <button id="confirm" type="submit" class="bg-blue-500 text-white p-2 rounded" onclick="action = 'profil.php'">Oui</button>
+                <button id="confirm" type="button" class="bg-blue-500 text-white p-2 rounded" onclick="document.getElementById('modif').submit();">Oui</button>
                 <button id="cancel" class="bg-red-500 text-white p-2 rounded">Non</button>
             </div>
         </div>

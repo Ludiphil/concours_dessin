@@ -1,6 +1,4 @@
 <?php
-// inscription.php
-
 // Include the database connection file
 include 'db_connect.php';
 
@@ -10,6 +8,8 @@ $city = $_POST['city'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
+$first_name = $_POST['first_name']; // Add this line
+$last_name = $_POST['last_name']; // Add this line
 
 // Check if the passwords match
 if ($password !== $confirm_password) {
@@ -21,8 +21,8 @@ if ($password !== $confirm_password) {
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 // Create the SQL query
-$sql = "INSERT INTO Utilisateur (adresse, login, motDePasse)
-VALUES ('$city $postal_code', '$email', '$hashed_password')";
+$sql = "INSERT INTO Utilisateur (nom, prenom, adresse, login, motDePasse)
+VALUES ('$last_name', '$first_name', '$city $postal_code', '$email', '$hashed_password')"; // Modify this line
 
 // Execute the query
 if ($conn->query($sql) === TRUE) {

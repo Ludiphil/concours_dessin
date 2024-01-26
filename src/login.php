@@ -35,19 +35,20 @@ if ($result->num_rows > 0) {
         exit();
     } else {
         header('Location: connexion.html?error=1');
+        exit();
 
     }
 } else {
     header('Location: connexion.html?error=1');
+    exit();
+
 
 }
 
 // check the credentials (this is just a placeholder, you should check the credentials against a database)
 if ($username == 'admin' && $password == 'password') {
     $_SESSION['role'] = 'admin';
-} else(){
-
-}
+} 
 // elseif ($username == 'competitor' && $password == 'password') {
 //     $_SESSION['role'] = 'competitor';
 // } elseif ($username == 'evaluator' && $password == 'password') {

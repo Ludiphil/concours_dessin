@@ -57,9 +57,12 @@ if ($result->num_rows > 0) {
                 });
         
                 // pop up 
-                document.getElementById('submit').addEventListener('click', function(event) {
-                    event.preventDefault();
-                    document.getElementById('dialog').classList.remove('hidden');
+                document.getElementById('submit').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var dialog = document.getElementById('dialog');
+                    if (dialog.classList.contains('hidden')) {
+                        dialog.classList.remove('hidden');
+                    }
                 });
         
                 document.getElementById('confirm').addEventListener('click', function() {

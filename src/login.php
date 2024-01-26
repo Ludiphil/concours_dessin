@@ -1,6 +1,8 @@
 <?php
 // start the session
 session_start();
+include 'db_connect.php';
+
 
 // get the username and password from the form
 $username = $_POST['username'];

@@ -27,7 +27,7 @@ VALUES ('$city $postal_code', '$email', '$hashed_password')";
 // Execute the query
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    header('Location: connexion.html');
+    header('Location: connexion.php');
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

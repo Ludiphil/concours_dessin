@@ -75,24 +75,26 @@ if ($result->num_rows > 0) {
 
 
 
-        <div class="pt-20 flex justify-center items-center">
-            <div class="w-full max-w-xs">
-                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <h2 class="block text-gray-700 text-sm font-bold mb-2">Profil</h2>
-                    <label for="firstname">Prénom</label>
-                    <input id="firstname" name="firstname" type="text" class="border border-gray-300 p-2 mb-2" value="<?php echo $user['prenom']; ?>">
-                    <label for="lastname">Nom</label>
-                    <input id="lastname" name="lastname" type="text" class="border border-gray-300 p-2 mb-2" value="<?php echo $user['nom']; ?>">
-                    <label for="address">Rue</label>
-                    <input id="address" name="address" type="text" class="border border-gray-300 p-2 mb-2" value="<?php echo $user['adresse']; ?>">
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" class="border border-gray-300 p-2 mb-2" value="<?php echo $user['login']; ?>">
-                    <label for="mdp">mot de passe</label>
-                    <input id="mdp" name="mdp" type="password" class="border border-gray-300 p-2 mb-2" value="<?php echo $user['login']; ?>">
-                    <button id="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Mettre à jour</button>
+        <form id="modif" action="update_user.php" method="post">
+            <div class="pt-20 flex justify-center items-center">
+                <div class="w-full max-w-xs">
+                    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        <h2 class="block text-gray-700 text-sm font-bold mb-2">Profil</h2>
+                        <label for="firstname">Prénom</label>
+                        <input id="firstname" name="firstname" type="text" class="border border-gray-300 p-2 mb-2" value="<?php echo $user['prenom']; ?>">
+                        <label for="lastname">Nom</label>
+                        <input id="lastname" name="lastname" type="text" class="border border-gray-300 p-2 mb-2" value="<?php echo $user['nom']; ?>">
+                        <label for="address">Rue</label>
+                        <input id="address" name="address" type="text" class="border border-gray-300 p-2 mb-2" value="<?php echo $user['adresse']; ?>">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" class="border border-gray-300 p-2 mb-2" value="<?php echo $user['login']; ?>">
+                        <label for="mdp">mot de passe</label>
+                        <input id="mdp" name="mdp" type="password" class="border border-gray-300 p-2 mb-2" value="">
+                        <button id="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Mettre à jour</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </body>
 </html>
 

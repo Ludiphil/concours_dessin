@@ -1,13 +1,4 @@
-<div id="navbar"></div>
-    <script>
-      window.onload = function() {
-        fetch('navbar.php')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('navbar').innerHTML = data;
-          });
-      };
-    </script>
+
 
 <?php
 // start the session
@@ -72,3 +63,31 @@ if ($result->num_rows > 0) {
 // Close the connection
 $conn->close();
 ?>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gradient-to-b from-pink-500 to-blue-500 bg-no-repeat min-h-screen bg-cover coiny-regular">
+    <div class="container mx-auto px-4">
+        <div id="navbar"></div>
+        
+        <script>
+            window.onload = function() {
+                fetch('navbar.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
+            };
+        </script>
+</body>
+</html>

@@ -10,5 +10,5 @@ if ($_SESSION['role'] != 'competitor') {
 }
 
 // if the user is a competitor, include the competitor HTML file
-include 'participants.html';
+include 'competiteur.html';
 ?>

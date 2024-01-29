@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competiteur</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gradient-to-b from-pink-500 to-blue-500 bg-no-repeat min-h-screen bg-cover coiny-regular">
+    <div class="container mx-auto px-4">
+        <div id="navbar"></div>
+
+        <!-- pop up -->
+        <div id="dialog" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white p-4 rounded">
+                <p>Voulez-vous valider ce choix ?</p>
+                <button id="confirm" class="bg-blue-500 text-white p-2 rounded">Oui</button>
+                <button id="cancel" class="bg-red-500 text-white p-2 rounded">Non</button>
+            </div>
+        </div>
+
+
+        <script>
+            window.onload = function() {
+                fetch('navbar.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
+        
+                // pop up 
+                document.getElementById('validate').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    document.getElementById('dialog').classList.remove('hidden');
+                });
+        
+                document.getElementById('confirm').addEventListener('click', function() {
+                    document.getElementById('dialog').classList.add('hidden');
+                });
+        
+                document.getElementById('cancel').addEventListener('click', function() {
+                    document.getElementById('dialog').classList.add('hidden');
+                });
+            };
+        </script>
+
+        <div class="grid grid-cols-3 gap-4 mt-8">
+            <div class="bg-white p-4 rounded">
+                <img src="../image/dessin_test.png" alt="Dessin" class="w-full h-auto">
+                <input type="file" name="image" class="mt-4">
+                <button id="validate" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline block text-center mt-4">Remplacer le dessin</button>
+            </div>
+        </div>
+        
+        <div class="flex items-center justify-center pt-8">
+            <a href="participants.html" class="bg-white text-blue-500 py-4 px-6 rounded focus:outline-none focus:shadow-outline">Participants</a>
+        </div>
+        
+    </div>
+</body>
+</html>

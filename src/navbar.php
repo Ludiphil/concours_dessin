@@ -1,7 +1,6 @@
 <?php
 // start the session
 session_start();
-var_dump($_SESSION['username']);
 
 // Include the database connection file
 include 'db_connect.php';

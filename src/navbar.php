@@ -14,9 +14,7 @@ if ($result === FALSE) {
     die("SQL Error: " . $conn->error);
 }
 
-echo "Performed SQL query.<br>";
 
-echo "<div style='background-color: yellow;'>";
 if ($result->num_rows > 0) {
   // Output data of each row
   while($row = $result->fetch_assoc()) {

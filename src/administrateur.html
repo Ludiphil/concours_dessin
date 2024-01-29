@@ -14,12 +14,37 @@
 <body class="bg-gradient-to-b from-pink-500 to-blue-500 bg-no-repeat min-h-screen bg-cover coiny-regular">
     <div class="container mx-auto px-4">
         <div id="navbar"></div>
+        <div id="dialog" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white p-4 rounded">
+                <p>Valider le concours</p>
+                <button id="confirm" class="bg-blue-500 text-white p-2 rounded">Oui</button>
+                <button id="cancel" class="bg-red-500 text-white p-2 rounded">Non</button>
+            </div>
+        </div>
+        
         <script>
             window.onload = function() {
                 fetch('navbar.php')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('navbar').innerHTML = data;
+                });
+        
+                // pop up 
+                document.getElementById('creerConcours').addEventListener('click', function(event) {
+                    var nomConcours = document.getElementById('nomConcours').value;
+                    var theme = document.getElementById('theme').value;
+                    var dateDebut = document.getElementById('dateDebut').value;
+                    var dateFin = document.getElementById('dateFin').value;
+        
+                    if (!nomConcours || !theme || !dateDebut || !dateFin) {
+                        event.preventDefault();
+                        document.getElementById('dialog').classList.remove('hidden');
+                    }
+                });
+        
+                document.getElementById('confirm').addEventListener('click', function() {
+                    document.getElementById('dialog').classList.add('hidden');
                 });
             };
         </script>
@@ -28,11 +53,11 @@
             <div class="bg-white p-10 rounded-lg shadow-lg m-4">
                 <h1 class="text-5xl text-white text-center stroke-text">Création de concours</h1>
                 <form class="mt-4">
-                    <input type="text" placeholder="Nom du concours" class="w-full p-2 mb-4 border border-gray-400 rounded">
-                    <input type="text" placeholder="Thème du concours" class="w-full p-2 mb-4 border border-gray-400 rounded">
-                    <input type="date" placeholder="Date de début" class="w-full p-2 mb-4 border border-gray-400 rounded">
-                    <input type="date" placeholder="Date de fin" class="w-full p-2 mb-4 border border-gray-400 rounded">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full">Créer</button>
+                    <input type="text" placeholder="Nom du concours" id="nomConcours"class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <input type="text" placeholder="Thème du concours" id="theme" class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <input type="date" placeholder="Date de début"id="dateDebut" class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <input type="date" placeholder="Date de fin" id="dateFin"class="w-full p-2 mb-4 border border-gray-400 rounded">
+                    <button id="creerConcours"class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full">Créer</button>
                 </form>
             </div>
             <!-- Section d'ajout de compétiteur -->

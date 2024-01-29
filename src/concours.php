@@ -61,6 +61,8 @@
             }
         }
 
+        $conn->close();
+
         ?>
 
 
@@ -107,7 +109,7 @@
                     <td class="border border-gray-400 px-4 py-2"><?php echo $concour['dateFin']; ?></td>
                     <td class="border border-gray-400 px-4 py-2 flex justify-center">
                         <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                            <a href="participants.html">Participants</a>
+                            <a href="participants.php">Participants</a>
                         </button> 
                     </td>  
                 </tr>

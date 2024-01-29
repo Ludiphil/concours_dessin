@@ -5,12 +5,6 @@ session_start();
 // Include the database connection file
 include 'db_connect.php';
 
-// Test the database connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Connected successfully.<br>";
-}
 
 // Perform a query
 $sql = "SELECT * FROM Dessin";
@@ -52,7 +46,7 @@ $conn->close();
       Concours de dessins
   </a>
   <div class="space-x-4">
-      <a href="concours.php" class="text-black hover:text-gray-200">Concours</a>
+      <a href="concours.html" class="text-black hover:text-gray-200">Concours</a>
       <a href="dessins.html" class="text-black hover:text-gray-200">Dessins</a>
       <?php if (!isset($_SESSION['role'])): ?>
           <!-- show these buttons only if the user is not logged in -->

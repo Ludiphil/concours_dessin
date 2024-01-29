@@ -1,6 +1,4 @@
 <?php
-// inscription.php
-
 // Include the database connection file
 include 'db_connect.php';
 
@@ -10,6 +8,8 @@ $city = $_POST['city'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
+$first_name = $_POST['firstname']; 
+$last_name = $_POST['lastname']; 
 
 // Check if the passwords match
 if ($password !== $confirm_password) {
@@ -18,16 +18,15 @@ if ($password !== $confirm_password) {
 }
 
 // Hash the password
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 // Create the SQL query
-$sql = "INSERT INTO Utilisateur (adresse, login, motDePasse)
-VALUES ('$city $postal_code', '$email', '$hashed_password')";
+$sql = "INSERT INTO Utilisateur (nom, prenom, adresse, login, motDePasse)
+VALUES ('$last_name', '$first_name', '$city $postal_code', '$email', '$password')"; 
 
 // Execute the query
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    header('Location: connexion.html');
+    header('Location: connexion.php');
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

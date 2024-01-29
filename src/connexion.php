@@ -1,3 +1,9 @@
+
+<?php
+if (isset($_GET['error'])) {
+    echo "<p>Invalid login or password</p>";
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
